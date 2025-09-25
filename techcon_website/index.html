@@ -2,39 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TechCon 2024</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechCon 2024 - Innovate, Connect, Transform</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <h1>TechCon 2024</h1>
-    <nav>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1>TechCon 2024</h1>
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <section>
-      <h2>Welcome to TechCon 2024</h2>
-      <p>The premier technology conference where innovators and leaders explore the future of tech.</p>
-      <video controls width="600">
-        <source src="promo.mp4" type="video/mp4">
-        <track src="promo_subtitles.vtt" kind="subtitles" srclang="en" label="English">
-        Your browser does not support the video tag.
-      </video>
-    </section>
+    <div class="container">
+      <section class="intro">
+        <h2>Welcome to the Future of Technology</h2>
+        <p>Join us at TechCon 2024, where innovation meets opportunity. Experience three days of cutting-edge technology presentations, hands-on workshops, and networking with industry leaders. Whether you're a developer, entrepreneur, or tech enthusiast, TechCon 2024 is your gateway to the future of technology.</p>
+        
+        <div class="video-container">
+          <video controls width="100%">
+            <source src="videos/techcon-promo.mp4" type="video/mp4">
+            <track 
+              label="English" 
+              kind="subtitles" 
+              srclang="en" 
+              src="promo_subtitles.vtt"
+              default>
+            Your browser does not support the video tag. You can <a href="videos/techcon-promo.mp4">download the video</a> instead.
+          </video>
+        </div>
+      </section>
+    </div>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 TechCon Conference</p>
+    <div class="container">
+      <p>Copyright © 2025 TechCon Conference. All rights reserved.</p>
+    </div>
   </footer>
 
 </body>
