@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About TechCon 2024 - Premier Technology Conference</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" patternUnits="userSpaceOnUse" width="100" height="100"><path d="M10 10h20v20h-20z M30 30h20v20h-20z M50 10h20v20h-20z M70 30h20v20h-20z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        main {
+            padding: 3rem 2rem;
+        }
+
+        article {
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        article::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #e74c3c, #f39c12, #2ecc71);
+        }
+
+        article h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        article h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #e74c3c);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .history-timeline {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .timeline-year {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498db;
+            min-width: 80px;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mission-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .mission-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .speaker-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(52, 152, 219, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .speaker-card:hover::before {
+            opacity: 1;
+        }
+
+        .speaker-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+            border: 4px solid #3498db;
+            transition: border-color 0.3s ease;
+        }
+
+        .speaker-card:hover .speaker-img {
+            border-color: #e74c3c;
+        }
+
+        .speaker-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .speaker-title {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .speaker-bio {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .history-img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #3498db;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            main {
+                padding: 2rem 1rem;
+            }
+            
+            article {
+                padding: 2rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>About TechCon 2024</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <article id="history">
+                <h2>Our History</h2>
+                <p>TechCon has been at the forefront of technological innovation and industry collaboration since its inception. Our journey represents decades of bringing together the brightest minds in technology.</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Years Running</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Attendees</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Speakers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                </div>
+
+                <div class="history-timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2010</span>
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=150&h=100&fit=crop" alt="Early TechCon conference hall with attendees" class="history-img">
+                        <div>
+                            <h3>The Beginning</h3>
+                            <p>TechCon was founded with 500 attendees in Silicon Valley, focusing on emerging web technologies and the early days of mobile computing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-year">2015</span>
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=150&h=100&fit=crop" alt="TechCon expansion with international speakers" class="history-img">
+                        <div>
+                            <h3>Global Expansion</h3>
+                            <p>We went international, hosting satellite events across Europe and Asia, reaching over 10,000 participants worldwide.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-year">2020</span>
+                        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=150&h=100&fit=crop" alt="Virtual TechCon during pandemic with online attendees" class="history-img">
+                        <div>
+                            <h3>Digital Transformation</h3>
+                            <p>Pivoted to virtual format during the pandemic, creating innovative online experiences that connected 25,000 attendees globally.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-year">2024</span>
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=150&h=100&fit=crop" alt="Modern hybrid TechCon event with AI and future technology themes" class="history-img">
+                        <div>
+                            <h3>The Future is Now</h3>
+                            <p>Our most ambitious event yet, featuring AI breakthroughs, quantum computing, and sustainable technology innovations.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article id="mission">
+                <h2>Our Mission</h2>
+                <p>TechCon 2024 is dedicated to fostering innovation, collaboration, and knowledge sharing within the global technology community. We believe in the power of technology to transform lives and shape the future.</p>
+                
+                <div class="mission-grid">
+                    <div class="mission-item">
+                        <div class="mission-icon">🚀</div>
+                        <h3>Innovation</h3>
+                        <p>Showcasing cutting-edge technologies and breakthrough innovations that will shape tomorrow's digital landscape.</p>
+                    </div>
+                    
+                    <div class="mission-item">
+                        <div class="mission-icon">🤝</div>
+                        <h3>Collaboration</h3>
+                        <p>Building bridges between industry leaders, startups, researchers, and developers to create meaningful partnerships.</p>
+                    </div>
+                    
+                    <div class="mission-item">
+                        <div class="mission-icon">💡</div>
+                        <h3>Education</h3>
+                        <p>Providing world-class learning opportunities through workshops, panels, and hands-on demonstrations.</p>
+                    </div>
+                    
+                    <div class="mission-item">
+                        <div class="mission-icon">🌍</div>
+                        <h3>Sustainability</h3>
+                        <p>Promoting environmentally responsible technology solutions and sustainable development practices.</p>
+                    </div>
+                    
+                    <div class="mission-item">
+                        <div class="mission-icon">🔬</div>
+                        <h3>Research</h3>
+                        <p>Supporting academic research and encouraging the translation of scientific breakthroughs into practical applications.</p>
+                    </div>
+                    
+                    <div class="mission-item">
+                        <div class="mission-icon">🎯</div>
+                        <h3>Impact</h3>
+                        <p>Creating lasting impact through technology that addresses real-world challenges and improves quality of life.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article id="past-speakers">
+                <h2>Notable Past Speakers</h2>
+                <p>Over the years, TechCon has featured remarkable thought leaders, innovators, and visionaries who have shared their insights and shaped the future of technology.</p>
+                
+                <div class="speakers-grid">
+                    <div class="speaker-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Dr. Sarah Chen, AI Research Director" class="speaker-img">
+                        <h3 class="speaker-name">Dr. Sarah Chen</h3>
+                        <p class="speaker-title">AI Research Director, TechFlow</p>
+                        <p class="speaker-bio">Leading expert in machine learning and neural networks. Pioneered breakthrough research in natural language processing and has authored over 50 scientific papers in AI.</p>
+                    </div>
+                    
+                    <div class="speaker-card">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face" alt="Marcus Rodriguez, Cybersecurity Expert" class="speaker-img">
+                        <h3 class="speaker-name">Marcus Rodriguez</h3>
+                        <p class="speaker-title">Chief Security Officer, SecureNet</p>
+                        <p class="speaker-bio">Cybersecurity veteran with 15 years of experience protecting Fortune 500 companies. Expert in blockchain security and quantum-resistant encryption methods.</p>
+                    </div>
+                    
+                    <div class="speaker-card">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b742?w=120&h=120&fit=crop&crop=face" alt="Lisa Thompson, Sustainable Tech Innovator" class="speaker-img">
+                        <h3 class="speaker-name">Lisa Thompson</h3>
+                        <p class="speaker-title">Founder & CEO, GreenTech Solutions</p>
+                        <p class="speaker-bio">Environmental technologist focused on sustainable computing solutions. Led development of carbon-neutral data centers and renewable energy integration systems.</p>
+                    </div>
+                    
+                    <div class="speaker-card">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop&crop=face" alt="Dr. James Wilson, Quantum Computing Pioneer" class="speaker-img">
+                        <h3 class="speaker-name">Dr. James Wilson</h3>
+                        <p class="speaker-title">Quantum Computing Lead, QuantumTech</p>
+                        <p class="speaker-bio">Quantum physics researcher turned industry leader. Instrumental in developing practical quantum algorithms and bringing quantum computing to commercial applications.</p>
+                    </div>
+                    
+                    <div class="speaker-card">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop&crop=face" alt="Elena Vasquez, IoT Systems Architect" class="speaker-img">
+                        <h3 class="speaker-name">Elena Vasquez</h3>
+                        <p class="speaker-title">IoT Systems Architect, ConnectAll</p>
+                        <p class="speaker-bio">IoT specialist with expertise in smart city infrastructure and industrial automation. Designed connected systems for over 100 cities worldwide.</p>
+                    </div>
+                    
+                    <div class="speaker-card">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&h=120&fit=crop&crop=face" alt="David Kim, Blockchain Developer" class="speaker-img">
+                        <h3 class="speaker-name">David Kim</h3>
+                        <p class="speaker-title">Blockchain Developer, CryptoInnovate</p>
+                        <p class="speaker-bio">Blockchain architect and cryptocurrency expert. Created secure decentralized applications and contributed to major open-source blockchain protocols.</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 TechCon. All rights reserved.</p>
+            <p>Empowering Innovation | Connecting Minds | Shaping the Future</p>
+        </footer>
+    </div>
+</body>
+</html>
